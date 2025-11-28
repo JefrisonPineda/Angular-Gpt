@@ -1,24 +1,34 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+// ...existing code...
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar-menu-item',
+  standalone: true,
   imports: [
-    RouterModule],
+    RouterModule,
+    CommonModule
+  ],
   template: `
     <a
       [routerLink]="path"
+      routerLinkActive="bg-gray-800"
+      class="flex justify-center items-center hover:bg-gray-800 rounded-md transition-colors"
     >
-
+      <i class="{{ icon }} text-2xl mr-4 text-indigo-400"></i>
+      <div class="flex flex-col grow">
+        <span class="text-white text-lg font-semibold">{{ title }}</span>
+        <span class="text-gray-400 text-sm">{{ descripcion }}</span>
+      </div>
     </a>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarMenuItem { 
+export class SidebarMenuItem {
+    
+  @Input({ required: true }) icon!: string;
+  @Input({ required: true }) title!: string;
+  @Input({ required: true }) descripcion!: string;
+  @Input({ required: true }) path!: string;
 
-  @Input({required: true}) icon!: string;
-  @Input({required: true}) title!: string;
-  @Input({required: true}) descripcion!: string;
-  @Input({required: true}) path!: string;
 }
