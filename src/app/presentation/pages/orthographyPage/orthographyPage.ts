@@ -1,6 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { GptMessage } from '../../components/chat-bubbles/gptMessage/gptMessage';
-import { CommonModule } from '@angular/common';
+import { MyMessage } from '../../components/chat-bubbles/gptMessage/myMessage/myMessage';
+
 
 @Component({
   selector: 'app-orthography-page',
@@ -8,6 +10,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     GptMessage,
+    MyMessage,
   ],
   templateUrl: './orthographyPage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
