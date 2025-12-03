@@ -17,4 +17,11 @@ import { GptMessage, MyMessage, TextMessageBox, TypingLoader } from '@components
   templateUrl: './orthographyPage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class OrthographyPage { }
+export default class OrthographyPage {
+
+
+  handleMessage( prompt:string ){
+    console.log({ prompt });
+  }
+
+ }
