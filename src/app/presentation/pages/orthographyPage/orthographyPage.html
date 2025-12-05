@@ -25,8 +25,13 @@
         (onMessage)="handleMessage($event)"
     /> -->
 
-     <app-text-message-box-file 
+     <!--<app-text-message-box-file 
         placeholder="Escribe aqui lo que deseas"
         (onMessage)="handleMessageWithFile($event)"
+    />-->
+
+    <app-text-message-box-select
+        placeholder="Escribe aqui lo que deseas"
+        (onMessage)="handleMessageWithSelect($event)"
     />
 </div>

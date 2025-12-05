@@ -32,4 +32,9 @@ export default class OrthographyPage {
     
     console.log({ prompt, file });
   }
+
+  handleMessageWithSelect( event: TextMessageBoxEvent ){
+    console.log( event );
+  }
+
  }
