@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { GptMessage, MyMessage, TextMessageBox, TextMessageBoxEvent, TextMessageBoxFile, TextMessageBoxSelect, TextMessageEvent, TypingLoader } from '@components/index';
-
+import { Message } from '@interfaces/message.interface';
 
 
 @Component({
@@ -22,6 +22,8 @@ import { GptMessage, MyMessage, TextMessageBox, TextMessageBoxEvent, TextMessage
 })
 export default class OrthographyPage {
 
+  public messages = signal<Message[]>([]);
+  public isLoading = signal(false);
 
   handleMessage( prompt:string ){
 
