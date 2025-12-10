@@ -14,7 +14,7 @@
                     <app-gpt-message [text]="message.text"/>
                 } @else {
                     <app-my-message [text]="message.text"
-                    />
+                    />   
                 }
             }
 
@@ -37,14 +37,5 @@
         (onMessage)="handleMessage($event)"
     /> -->
 
-     <!--<app-text-message-box-file 
-        placeholder="Escribe aqui lo que deseas"
-        (onMessage)="handleMessageWithFile($event)"
-    />-->
 
-    <app-text-message-box-select
-        placeholder="Escribe aqui lo que deseas"
-        [options]="[{ id:'1', text: '1'},{ id:'2', text: '2'}]"
-        (onMessage)="handleMessageWithSelect($event)"
-    />
 </div>
